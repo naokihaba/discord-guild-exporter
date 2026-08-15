@@ -1,0 +1,77 @@
+@layer reset, base;
+
+@layer reset {
+  html {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  p,
+  ul {
+    margin: 0;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    font-synthesis: none;
+    color: light-dark(#172033, #f7f8ff);
+    background: light-dark(#f7f7fb, #101116);
+    --accent: #5865f2;
+    --accent-strong: light-dark(#3f4edb, #8790ff);
+    --surface: light-dark(#ffffff, #191b22);
+    --surface-soft: light-dark(#f0f1f7, #21242d);
+    --surface-raised: light-dark(#ffffff, #20222b);
+    --text: light-dark(#172033, #f7f8ff);
+    --text-muted: light-dark(#5d6474, #aeb3c2);
+    --border: light-dark(#dfe1e9, #323641);
+    --success: light-dark(#207a4a, #5bd79a);
+    --danger: light-dark(#b42335, #ff8794);
+    --shadow: light-dark(rgb(28 32 48 / 10%), rgb(0 0 0 / 30%));
+  }
+
+  body {
+    min-inline-size: 20rem;
+    min-block-size: 100dvh;
+    line-height: 1.5;
+  }
+
+  button,
+  a,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :where(button, a, input):focus-visible {
+    outline: 0.2rem solid var(--accent-strong);
+    outline-offset: 0.2rem;
+  }
+
+  button {
+    min-block-size: 2.75rem;
+    min-inline-size: 2.75rem;
+  }
+
+  @media (pointer: coarse) {
+    button,
+    input {
+      min-block-size: 3rem;
+    }
+  }
+}
